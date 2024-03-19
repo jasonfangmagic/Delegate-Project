@@ -7,9 +7,6 @@
 
 import UIKit
 
-protocol ProductSelectionDelegate {
-    func didSelectProduct(name: String, imageName: String)
-}
 
 class ProductSelectionVC: UIViewController {
 
@@ -17,7 +14,7 @@ class ProductSelectionVC: UIViewController {
     let iPadButton = UIButton()
     let macBookButton = UIButton()
 
-    var delegate: ProductSelectionDelegate?
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,19 +22,19 @@ class ProductSelectionVC: UIViewController {
     }
 
     @objc func iPhoneButtonTapped() {
-        delegate?.didSelectProduct(name: "iPhone 14", imageName: "iphone")
+        
         dismiss(animated: true)
     }
 
 
     @objc func iPadButtonTapped() {
-        delegate?.didSelectProduct(name: "iPad Air", imageName: "ipad")
+       
         dismiss(animated: true)
     }
 
 
     @objc func macBookButtonTapped() {
-        delegate?.didSelectProduct(name: "MacBook", imageName: "mac")
+       
         dismiss(animated: true)
     }
     

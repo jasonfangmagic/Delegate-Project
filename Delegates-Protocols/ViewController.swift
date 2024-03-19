@@ -7,11 +7,13 @@
 
 import UIKit
 
-class ViewController: UIViewController, ProductSelectionDelegate {
+class ViewController: UIViewController {
 
     let productImageView = UIImageView()
     let productNameLabel = UILabel()
     let chooseProductButton = UIButton()
+
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,15 +21,10 @@ class ViewController: UIViewController, ProductSelectionDelegate {
     }
 
 
-    func didSelectProduct(name: String, imageName: String) {
-        productNameLabel.text = name
-        productImageView.image = UIImage(named: imageName)
-    }
-
 
     @objc func presentProductSelectionVC() {
         let destinationVC = ProductSelectionVC()
-        destinationVC.delegate = self
+
 
         destinationVC.modalPresentationStyle = .pageSheet
         destinationVC.sheetPresentationController?.detents = [.medium()]
